@@ -1,0 +1,8 @@
+aliases:
+  strong: { claude: opus }
+  fast: { claude: sonnet }
+roles:
+  planning: strong
+  review: strong
+  implementation: fast
+  research: fast

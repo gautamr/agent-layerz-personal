@@ -1,0 +1,8 @@
+name: personal
+kind: personal
+visibility: public
+version: 0.5.0
+description: Universal standards, role agents, the delivery kit and personal skills
+commit_identity:
+  name: gautamr
+  email: 70894+gautamr@users.noreply.github.com

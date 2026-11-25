@@ -1,0 +1,8 @@
+deny:
+  - "read:.env"
+  - "read:.env.*"
+  - "read:**/.env"
+  - "read:**/.env.*"
+  - "read:**/secrets/**"
+  - "bash:git push --force*"
+  - "bash:git push -f*"

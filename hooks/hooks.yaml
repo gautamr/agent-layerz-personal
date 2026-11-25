@@ -1,0 +1,29 @@
+# Role path guard. Only active in a repository with
+# an ownership.conf at its root; roles without a line there are not restricted.
+- id: role-path-guard
+  event: pre_tool
+  match:
+    tools: [edit, write]
+  run: scripts/guard-paths.sh
+  on_fail: deny
+  timeout: 10
+# Hub boundary. Only active in a client hub.
+- id: hub-boundary-guard
+  event: pre_tool
+  match:
+    tools: [edit, write]
+  run: scripts/hub-guard.sh
+  on_fail: deny
+  timeout: 10
+# Short orientation at session start.
+- id: session-brief
+  event: session_start
+  run: scripts/session-brief.sh
+  on_fail: warn
+  timeout: 20
+# Phone notification through ntfy when NTFY_TOPIC is set; a no-op otherwise.
+- id: notify-owner
+  event: claude:Notification
+  run: scripts/notify.sh
+  on_fail: warn
+  timeout: 10
